@@ -2,6 +2,7 @@ package com.george.solid;
 
 import com.george.solid.book.Book;
 import com.george.solid.book.Invoice;
+import com.george.solid.book.InvoiceTestSummarizer;
 import com.george.solid.book.output.InvoicePrinter;
 
 public class MainApp {
@@ -27,9 +28,9 @@ public class MainApp {
                 .withQuantity(2)
                 .withTaxRate(0.08).build();
 
-        InvoicePrinter invoicePrinter = new InvoicePrinter();
+        InvoicePrinter invoicePrinter = new InvoicePrinter(new InvoiceTestSummarizer());
         invoicePrinter.printInvoice(invoice);
 
-        
+
     }
 }

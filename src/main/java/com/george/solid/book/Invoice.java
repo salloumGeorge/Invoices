@@ -38,9 +38,7 @@ public class Invoice {
 
     public double calculateTotal() {
         double price = ((book.getPrice() - book.getPrice() * discountRate) * this.quantity);
-
         double priceWithTaxes = price * (1 + taxRate);
-
         return priceWithTaxes;
     }
 

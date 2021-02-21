@@ -1,16 +1,16 @@
 package com.george.solid.book.output;
 
 import com.george.solid.book.Invoice;
+import com.george.solid.book.InvoiceTestSummarizer;
 
 public class InvoicePrinter {
+    InvoiceTestSummarizer invoiceTestSummarizer;
 
-    public InvoicePrinter() {
+    public InvoicePrinter(InvoiceTestSummarizer invoiceTestSummarizer) {
+        this.invoiceTestSummarizer = invoiceTestSummarizer;
     }
 
     public void printInvoice(Invoice invoice) {
-        System.out.println(invoice.getQuantity() + "x " + invoice.getBook().getName() + " " + invoice.getBook().getName() + "$");
-        System.out.println("Discount Rate: " + invoice.getDiscountRate());
-        System.out.println("Tax Rate: " + invoice.getTaxRate());
-        System.out.println("Total: " + invoice.getTotal());
+        System.out.println(invoiceTestSummarizer.getSummary(invoice));
     }
 }
