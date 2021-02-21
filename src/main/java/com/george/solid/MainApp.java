@@ -28,7 +28,7 @@ public class MainApp {
                 .withQuantity(2)
                 .withTaxRate(0.08).build();
 
-        InvoicePrinter invoicePrinter = new InvoicePrinter(new InvoiceTestSummarizer());
+        InvoicePrinter invoicePrinter = new InvoicePrinter();
         invoicePrinter.printInvoice(invoice);
 
 
