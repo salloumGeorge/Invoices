@@ -8,6 +8,26 @@ public class Invoice {
     private double taxRate;
     private double total;
 
+    public Book getBook() {
+        return book;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public double getDiscountRate() {
+        return discountRate;
+    }
+
+    public double getTaxRate() {
+        return taxRate;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
     public Invoice(Book book, int quantity, double discountRate, double taxRate) {
         this.book = book;
         this.quantity = quantity;
@@ -24,12 +44,6 @@ public class Invoice {
         return priceWithTaxes;
     }
 
-    public void printInvoice() {
-        System.out.println(quantity + "x " + book.getName() + " " + book.getName() + "$");
-        System.out.println("Discount Rate: " + discountRate);
-        System.out.println("Tax Rate: " + taxRate);
-        System.out.println("Total: " + total);
-    }
 
     public void saveToFile(String filename) {
         // Creates a file with given name and writes the invoice

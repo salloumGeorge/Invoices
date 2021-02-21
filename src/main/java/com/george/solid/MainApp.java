@@ -2,6 +2,7 @@ package com.george.solid;
 
 import com.george.solid.book.Book;
 import com.george.solid.book.Invoice;
+import com.george.solid.book.output.InvoicePrinter;
 
 public class MainApp {
 
@@ -26,6 +27,9 @@ public class MainApp {
                 .withQuantity(2)
                 .withTaxRate(0.08).build();
 
-        invoice.printInvoice();
+        InvoicePrinter invoicePrinter = new InvoicePrinter();
+        invoicePrinter.printInvoice(invoice);
+
+        
     }
 }
