@@ -1,13 +1,13 @@
 package com.george.solid.book.output;
 
 import com.george.solid.book.Invoice;
-import com.george.solid.book.InvoiceTestSummarizer;
+import com.george.solid.book.InvoiceDetailsProvider;
 
 public class InvoicePrinter {
-    InvoiceTestSummarizer invoiceTestSummarizer = new InvoiceTestSummarizer();
+    InvoiceDetailsProvider invoiceDetailsProvider = new InvoiceDetailsProvider();
 
 
     public void printInvoice(Invoice invoice) {
-        System.out.println(invoiceTestSummarizer.getSummary(invoice));
+        System.out.println(invoiceDetailsProvider.getDetails(invoice));
     }
 }
