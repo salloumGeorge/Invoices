@@ -35,4 +35,42 @@ public class Invoice {
         // Creates a file with given name and writes the invoice
     }
 
+
+    public static final class InvoiceBuilder {
+        private Book book;
+        private int quantity;
+        private double discountRate;
+        private double taxRate;
+
+        private InvoiceBuilder() {
+        }
+
+        public static InvoiceBuilder anInvoice() {
+            return new InvoiceBuilder();
+        }
+
+        public InvoiceBuilder withBook(Book book) {
+            this.book = book;
+            return this;
+        }
+
+        public InvoiceBuilder withQuantity(int quantity) {
+            this.quantity = quantity;
+            return this;
+        }
+
+        public InvoiceBuilder withDiscountRate(double discountRate) {
+            this.discountRate = discountRate;
+            return this;
+        }
+
+        public InvoiceBuilder withTaxRate(double taxRate) {
+            this.taxRate = taxRate;
+            return this;
+        }
+
+        public Invoice build() {
+            return new Invoice(book, quantity, discountRate, taxRate);
+        }
+    }
 }

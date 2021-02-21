@@ -10,7 +10,22 @@ public class MainApp {
         /*
          * SRP
          * */
-        Book cleanCodeBook = new Book("Clean Code", "Robert C Martin", 2008, 42, "9780132350884");
-        new Invoice(cleanCodeBook, 2, 2.0, 8.0);
+
+        //Book cleanCodeBook = new Book("Clean Code", "Robert C Martin", 2008, 42, "9780132350884");
+        Book.BookBuilder builder = Book.BookBuilder.aBook()
+                .withAuthorName("Robert C Martin")
+                .withName("Clean Code")
+                .withIsbn("970")
+                .withPrice(42)
+                .withYear(2008);
+        Book cleanCodeBook = builder.build();
+/*
+        Invoice invoice = new Invoice(cleanCodeBook, 2, 0.02, 0.08);*/
+        Invoice invoice = Invoice.InvoiceBuilder.anInvoice().withBook(cleanCodeBook)
+                .withDiscountRate(0.02)
+                .withQuantity(2)
+                .withTaxRate(0.08).build();
+
+        invoice.printInvoice();
     }
 }
