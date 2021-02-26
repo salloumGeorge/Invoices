@@ -1,5 +1,8 @@
 package com.george.solid.book;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Invoice {
 
     private Book book;
@@ -31,8 +34,13 @@ public class Invoice {
         System.out.println("Total: " + total);
     }
 
-    public void saveToFile(String filename) {
-        // Creates a file with given name and writes the invoice
+    public void saveToFile(String filename) throws IOException {
+        try (FileWriter fileWriter = new FileWriter(filename)) {
+            fileWriter.write(quantity + "x " + book.getName() + " " + book.getName() + "$ +\n");
+            fileWriter.write("Discount Rate: " + discountRate+ "\n");
+            fileWriter.write("Tax Rate: " + taxRate+ "\n");
+            fileWriter.write("Total: " + total + "\n");
+        }
     }
 
 }
