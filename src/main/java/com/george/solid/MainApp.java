@@ -2,6 +2,7 @@ package com.george.solid;
 
 import com.george.solid.book.Book;
 import com.george.solid.book.Invoice;
+import com.george.solid.output.InvoicePrinter;
 
 import java.io.IOException;
 
@@ -16,6 +17,7 @@ public class MainApp {
         double v = invoice.calculateTotal();
         System.out.println(v);
 
-        invoice.printInvoice();
+        InvoicePrinter invoicePrinter = new InvoicePrinter();
+        invoicePrinter.printsInvoice(invoice);
     }
 }
